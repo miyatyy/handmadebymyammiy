@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+@import 'tailwindcss';
+
+/* ─── VARIABEL TEMA ──────────────────────────────────────────────────────── */
+:root {
+  --cream: #FAF7F2;
+  --pink: #F4D5CC;
+  --peach: #FCE1E4;
+  --lavender: #E8DFF5;
+  --sage: #E2F0CB;
+  --taupe: #4A3E3D;
+  --taupe-lt: #7A6A68;
+  --taupe-xlt: #A89896;
+  --font-h: 'Comfortaa', cursive, sans-serif;
+  --font-b: 'Nunito', sans-serif;
+  --clay-shadow: 8px 12px 24px rgba(200, 150, 150, 0.18), -6px -6px 16px rgba(255, 255, 255, 0.8), inset 2px 2px 4px rgba(255, 255, 255, 0.9), inset -2px -2px 4px rgba(200, 150, 150, 0.08);
+  --clay-shadow-hover: 12px 18px 30px rgba(200, 150, 150, 0.25), -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+/* ─── BASE RESET ─────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--taupe);
+  font-family: var(--font-b);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ─── CLAYMORPHISM & GLASSMOPRHISM STYLES (MATCH FIGMA) ────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.clay {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--clay-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.clay-pink { background: linear-gradient(135deg, #F4D5CC, #FCE1E4) !important; }
+.clay-lavender { background: linear-gradient(135deg, #E8DFF5, #FAEEE9) !important; }
+.clay-peach { background: linear-gradient(135deg, #FCE1E4, #FAF7F2) !important; }
+.clay-sage { background: linear-gradient(135deg, #E2F0CB, #F2F8E8) !important; }
+
+.clay-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-family: var(--font-h);
+  font-weight: 700;
+  color: var(--taupe);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(200, 150, 150, 0.2), 0 2px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.clay-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(200, 150, 150, 0.3), 0 2px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.clay-btn-pink { background: linear-gradient(135deg, #F4D5CC, #FCE1E4) !important; color: #5A3A35 !important; }
+.clay-btn-lavender { background: linear-gradient(135deg, #E8DFF5, #EDE4FA) !important; color: #4A3A60 !important; }
+
+/* ─── ANIMASI SLIDE SLIDE KEBAWAH (FADE UP) ──────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up.d1 { transition-delay: 0.1s; }
+.fade-up.d2 { transition-delay: 0.2s; }
+.fade-up.d3 { transition-delay: 0.3s; }
+.fade-up.d4 { transition-delay: 0.4s; }
+
+/* Keyframe Animasi Floating & Heartbeat */
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes floatY2 { 0%, 100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-16px) rotate(-2deg); } }
+@keyframes floatY3 { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-8px) scale(1.05); } }
+@keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 20px;
+  animation: cfPop 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes cfPop {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+  100% { opacity: 0; transform: var(--cf-end) scale(1.2) rotate(var(--cf-rot)); }
+}
+
+/* ─── RESPONSIVE LAYOUT (DESKTOP VS MOBILE) ──────────────────────────────── */
+
+/* Tampilan Laptop / Desktop */
+@media (min-width: 851px) {
+  .show-mobile {
+    display: none !important;
+  }
+  .hide-mobile {
+    display: flex !important;
+  }
+}
+
+/* Tampilan HP / Mobile */
+@media (max-width: 850px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: flex !important;
+  }
+
+  /* Dropdown Menu HP Padat (Tidak Transparan Tembus Pandang) */
+  nav > div:last-child {
+    background: #FAF5F3 !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
+    box-shadow: 0 12px 30px rgba(90, 58, 53, 0.25) !important;
+    border: 1.5px solid rgba(244, 213, 204, 0.9) !important;
+  }
+
+  /* Ubah layout grid dari 2 kolom jadi 1 kolom di HP */
+  #home > div,
+  #bags > div > div,
+  #story > div {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Foto polaroid Our Story di HP */
+  #story > div > div:first-child > div {
+    padding: 10px 0 !important;
+    width: 100% !important;
+  }
+  #story > div > div:first-child > div > div:nth-child(1) {
+    max-width: 135px !important;
+  }
+  #story > div > div:first-child > div > div:nth-child(2) {
+    max-width: 115px !important;
+  }
+
+  /* Sembunyikan tombol header "Visit Shopee Store" jika berada di dalam .hide-mobile 
+     Atau jika ada tombol header berdiri sendiri, aturan ini memastikan tombol tersebut tidak bertabrakan dengan hamburger menu */
+  header .clay-btn, 
+  nav .clay-btn-pink {
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+    white-space: nowrap;
+  }
+}
