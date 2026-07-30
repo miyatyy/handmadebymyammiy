@@ -663,7 +663,7 @@ function CottonBagTeaser({ burst }: { burst: (x: number, y: number) => void }) {
               playsInline
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 18 }}
             >
-              <source src="/sneak-peek.mp4" type="video/mp4" />
+              <source src="sneak-peek.mp4" type="video/mp4" />
               Browser kamu tidak mendukung pemutaran video.
             </video>
           </div>
