@@ -79,7 +79,7 @@ body {
 .clay-btn-pink { background: linear-gradient(135deg, #F4D5CC, #FCE1E4) !important; color: #5A3A35 !important; }
 .clay-btn-lavender { background: linear-gradient(135deg, #E8DFF5, #EDE4FA) !important; color: #4A3A60 !important; }
 
-/* ─── ANIMASI SLIDE SLIDE KEBAWAH (FADE UP) ──────────────────────────────── */
+/* ─── ANIMASI SLIDE KEBAWAH (FADE UP) ──────────────────────────────── */
 .fade-up {
   opacity: 0;
   transform: translateY(35px);
@@ -137,7 +137,28 @@ body {
     display: flex !important;
   }
 
-  /* Dropdown Menu HP Padat (Tidak Transparan Tembus Pandang) */
+  /* ─── KONTROL TOP BAR FULL WIDTH DI HP ─── */
+  header, nav {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 0 20px 20px !important; /* Membuat lekukan halus di bagian bawah saja */
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Penyesuaian tombol Shopee agar tetap muat di baris yang sama */
+  nav a.clay-btn-pink,
+  header a.clay-btn-pink {
+    display: inline-flex !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Dropdown Menu HP Padat */
   nav > div:last-child {
     background: #FAF5F3 !important;
     backdrop-filter: none !important;
@@ -154,24 +175,22 @@ body {
     gap: 32px !important;
   }
 
-  /* Foto polaroid Our Story di HP */
+  /* UKURAN POLAROID DIPERBESAR DI HP */
   #story > div > div:first-child > div {
     padding: 10px 0 !important;
     width: 100% !important;
-  }
-  #story > div > div:first-child > div > div:nth-child(1) {
-    max-width: 135px !important;
-  }
-  #story > div > div:first-child > div > div:nth-child(2) {
-    max-width: 115px !important;
+    justify-content: center !important;
   }
 
-  /* Sembunyikan tombol header "Visit Shopee Store" jika berada di dalam .hide-mobile 
-     Atau jika ada tombol header berdiri sendiri, aturan ini memastikan tombol tersebut tidak bertabrakan dengan hamburger menu */
-  header .clay-btn, 
-  nav .clay-btn-pink {
-    font-size: 11px !important;
-    padding: 6px 12px !important;
-    white-space: nowrap;
+  /* Foto Polaroid Kiri */
+  #story > div > div:first-child > div > div:nth-child(1) {
+    max-width: 180px !important;
+    width: 50% !important;
+  }
+
+  /* Foto Polaroid Kanan */
+  #story > div > div:first-child > div > div:nth-child(2) {
+    max-width: 160px !important;
+    width: 45% !important;
   }
 }

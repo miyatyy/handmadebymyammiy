@@ -38,7 +38,7 @@ const PRODUCTS = [
     price: 'Start Rp35.000',
     badge: 'Favorite 🌼',
     clay: 'clay-peach',
-    img: 'daisy.jpg', // Gambar bunga daisy
+    img: 'daisy3.jpeg', // Gambar bunga daisy
     alt: 'Buket Mini Daisy',
     accent: '#FCE1E4',
   },
@@ -60,7 +60,7 @@ const PRODUCTS = [
     price: 'Start Rp45.000',
     badge: 'Bebas Custom ✨',
     clay: 'clay-pink',
-    img: 'kain-flanel.jpg', // Gambar aksesoris/ganci handmade
+    img: 'kainflanel.jpg', // Gambar aksesoris/ganci handmade
     alt: 'Gantungan Kunci Kain Flanel',
     accent: '#F4D5CC',
   },
@@ -286,7 +286,7 @@ function Nav() {
             fontSize: 20,
             boxShadow: '0 4px 12px rgba(200,150,150,0.25), 0 1px 0 rgba(255,255,255,0.9) inset',
           }}>
-            🌸
+            <img src="/logo.png" style={{ width: '200%', height: '100%', borderRadius: '100%' }} />
           </div>
           <div>
             <div style={{ fontFamily: 'var(--font-h)', fontWeight: 700, fontSize: 13, color: 'var(--taupe)', lineHeight: 1 }}>
@@ -381,7 +381,7 @@ function Hero() {
               <div className="clay clay-pink" style={{ padding: '6px 16px', borderRadius: 999, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ animation: 'heartbeat 2.5s ease-in-out infinite', display: 'inline-block' }}>🌸</span>
                 <span style={{ fontFamily: 'var(--font-h)', fontWeight: 700, fontSize: 12, color: '#5A3A35', letterSpacing: '0.05em' }}>
-                  Small Batch · 100% Handmade
+                  Small Batch · 100% Handcrafted
                 </span>
               </div>
             </div>
@@ -415,8 +415,7 @@ function Hero() {
 
           <FadeUp delay={2}>
             <p style={{ fontSize: 17, color: 'var(--taupe-lt)', lineHeight: 1.78, maxWidth: 420, marginBottom: 36, fontFamily: 'var(--font-b)' }}>
-              Every petal stitched with intention, every bouquet wrapped with love.
-              Discover handmade crochet crafts that bring a little dreamy magic into your everyday. ✨
+              Every stem carefully shaped, every seam hand-stitched with love. Discover cute pipe cleaner keychains, aesthetic bag charms, and everyday cotton bags designed to bring a little dreamy magic into your life. ✨
             </p>
           </FadeUp>
 
@@ -458,8 +457,8 @@ function Hero() {
           <div style={{ position: 'relative', height: 560, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div className="clay clay-peach" style={{ maxWidth: 320,width: '100%', height: 400, borderRadius: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
               <img
-                src="daisy.jpg"
-                alt="Handmade crochet bouquet"
+                src="custom.jpeg"
+                alt="Handmade fuzzy bouquet"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 36 }}
               />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 50%, rgba(250,240,240,0.35) 100%)', borderRadius: 36 }} />
@@ -632,43 +631,55 @@ function CottonBagTeaser({ burst }: { burst: (x: number, y: number) => void }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
 
           <FadeUp delay={1}>
-            <div style={{ position: 'relative' }}>
-              <TiltCard style={{ borderRadius: 36, overflow: 'hidden' }}>
-                <div className="clay clay-lavender" style={{ borderRadius: 36, padding: 16 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                    <div style={{ gridRow: '1/3', borderRadius: 24, overflow: 'hidden', aspectRatio: '3/4', background: 'var(--lavender)' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1632942480766-9cee148c4ee8?w=420&h=560&fit=crop&auto=format"
-                        alt="White cotton bag hanging on door"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 24 }}
-                      />
-                    </div>
-                    <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '1/1', background: 'var(--peach)' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1548863227-3af567fc3b27?w=300&h=300&fit=crop&auto=format"
-                        alt="White tote bag"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 18 }}
-                      />
-                    </div>
-                    <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '1/1', background: 'var(--sage)' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1610282081854-9c311350beb9?w=300&h=300&fit=crop&auto=format"
-                        alt="Aesthetic cotton tote"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 18 }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </TiltCard>
+  <div style={{ position: 'relative' }}>
+    <TiltCard style={{ borderRadius: 36, overflow: 'hidden' }}>
+      <div className="clay clay-lavender" style={{ borderRadius: 36, padding: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          
+          {/* 1. Gambar Kiri (Besar) */}
+          <div style={{ gridRow: '1/3', borderRadius: 24, overflow: 'hidden', aspectRatio: '3/4', background: 'var(--lavender)' }}>
+            <img
+              src="/cottonbag1.jpg"
+              alt="White cotton bag hanging on door"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 24 }}
+            />
+          </div>
 
-              <div className="clay clay-pink" style={{ position: 'absolute', top: -16, right: -16, padding: '10px 18px', borderRadius: 20, transform: 'rotate(5deg)', animation: 'floatY2 5s ease-in-out infinite' }}>
-                <span style={{ fontFamily: 'var(--font-h)', fontWeight: 700, fontSize: 13, color: '#5A3A35' }}>👀 Sneak Peek</span>
-              </div>
+          {/* 2. Gambar Kanan Atas */}
+          <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '1/1', background: 'var(--peach)' }}>
+            <img
+              src="/cottonbag2.jpg"
+              alt="White tote bag"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 18 }}
+            />
+          </div>
 
-              <Float3D emoji="🧺" size={42} animation="floatY 6s ease-in-out infinite" style={{ position: 'absolute', bottom: -20, left: -20 }} />
-              <Float3D emoji="✨" size={28} animation="floatY3 4s ease-in-out infinite" style={{ position: 'absolute', top: 80, left: -30, animationDelay: '1s' }} />
-            </div>
-          </FadeUp>
+          {/* 3. VIDEO KANAN BAWAH (Kotak Kecil Bawah) */}
+          <div style={{ borderRadius: 18, overflow: 'hidden', aspectRatio: '1/1', background: 'var(--sage)' }}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 18 }}
+            >
+              <source src="/sneak-peek.mp4" type="video/mp4" />
+              Browser kamu tidak mendukung pemutaran video.
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </TiltCard>
+
+    <div className="clay clay-pink" style={{ position: 'absolute', top: -16, right: -16, padding: '10px 18px', borderRadius: 20, transform: 'rotate(5deg)', animation: 'floatY2 5s ease-in-out infinite' }}>
+      <span style={{ fontFamily: 'var(--font-h)', fontWeight: 700, fontSize: 13, color: '#5A3A35' }}>👀 Sneak Peek</span>
+    </div>
+
+    <Float3D emoji="🧺" size={42} animation="floatY 6s ease-in-out infinite" style={{ position: 'absolute', bottom: -20, left: -20 }} />
+    <Float3D emoji="✨" size={28} animation="floatY3 4s ease-in-out infinite" style={{ position: 'absolute', top: 80, left: -30, animationDelay: '1s' }} />
+  </div>
+</FadeUp>
 
           <div>
             <FadeUp>
@@ -699,8 +710,8 @@ function CottonBagTeaser({ burst }: { burst: (x: number, y: number) => void }) {
 
             <FadeUp delay={2}>
               <p style={{ fontSize: 16, color: 'var(--taupe-lt)', lineHeight: 1.78, margin: '0 0 26px', fontFamily: 'var(--font-b)' }}>
-                Versatile, soft, and hand-stitched cotton bags designed to elevate your daily
-                aesthetic outfit. Perfect for campus, market trips, and dreamy weekend adventures. 🌿
+                Versatile, soft, and hand-stitched cotton bags designed to elevate your daily aesthetic outfit. Perfect for campus, 
+                market trips, and dreamy weekend adventures. 🌿
               </p>
             </FadeUp>
 
@@ -784,13 +795,13 @@ function BrandStory() {
           <div style={{ position: 'relative', display: 'flex', gap: 16, justifyContent: 'center', padding: '24px 12px' }}>
             <div style={{ background: '#FFF', padding: '10px 10px 36px', boxShadow: 'var(--clay-shadow)', borderRadius: 4, transform: 'rotate(-3deg)', maxWidth: 240, flexShrink: 0 }}>
               <div style={{ aspectRatio: '4/5', overflow: 'hidden', background: 'var(--peach)' }}>
-                <img src="https://images.unsplash.com/photo-1682953388513-6d9837b23512?w=400&h=500&fit=crop&auto=format" alt="Crafting tools and yarn workspace" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/gancikabul.jpeg" alt="Crafting tools and design workspace" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
-              <p style={{ fontFamily: 'var(--font-h)', fontSize: 12, color: 'var(--taupe-lt)', textAlign: 'center', marginTop: 8 }}>my craft corner 🧶</p>
+              <p style={{ fontFamily: 'var(--font-h)', fontSize: 12, color: 'var(--taupe-lt)', textAlign: 'center', marginTop: 8 }}> Cute Pipe Cleaner Bag Charm </p>
             </div>
             <div style={{ background: '#FFF', padding: '10px 10px 36px', boxShadow: 'var(--clay-shadow)', borderRadius: 4, transform: 'rotate(2.5deg)', maxWidth: 200, marginTop: 40, flexShrink: 0 }}>
               <div style={{ aspectRatio: '4/5', overflow: 'hidden', background: 'var(--lavender)' }}>
-                <img src="https://images.unsplash.com/photo-1668072587819-7b393944b426?w=360&h=450&fit=crop&auto=format" alt="Colorful yarn bundles" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/lamputidur.jpeg"alt="Colorful lighting" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               <p style={{ fontFamily: 'var(--font-h)', fontSize: 12, color: 'var(--taupe-lt)', textAlign: 'center', marginTop: 8 }}>every colour ✿</p>
             </div>
@@ -821,22 +832,21 @@ function BrandStory() {
 
           <FadeUp delay={2}>
             <p style={{ fontSize: 15, color: 'var(--taupe-lt)', lineHeight: 1.85, margin: '0 0 14px', fontFamily: 'var(--font-b)' }}>
-              What started as a quiet hobby during late-night study sessions grew into
-              something I truly love. Every yarn is hand-picked, every stitch is intentional.
+              What started as a quiet hobby during late-night study sessions grew into something I truly love. Every fabric is hand-picked, 
+              every pipe cleaner is carefully shaped, and every stitch is intentional.
             </p>
             <p style={{ fontSize: 15, color: 'var(--taupe-lt)', lineHeight: 1.85, margin: '0 0 28px', fontFamily: 'var(--font-b)' }}>
-              No mass production. Just small batches, premium materials — organic cotton,
-              soft wool, recycled fibres — and a deep care for every person who receives
-              one of my pieces. 🌿
+             No mass production. Just small batches, quality materials — organic cotton, 
+             soft fabrics, fuzzy stems — and a deep care for every person who receives one of my pieces. 🌿
             </p>
           </FadeUp>
 
           <FadeUp delay={3}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
               {[
-                { icon: '🪡', t: 'Premium Yarn',    d: 'Organic natural fibres' },
-                { icon: '🤍', t: 'By Hand Only',    d: 'Every stitch, placed with care' },
-                { icon: '♻️', t: 'Eco-Conscious',   d: 'Minimal waste & recycled packing' },
+                { icon: '🪡', t: 'Quality Materials',    d: 'Selected soft fabrics & durable fuzzy wires' },
+                { icon: '🤍', t: 'By Hand Only',    d: 'Every stitch, cut, and shape placed with care' },
+                { icon: '♻️', t: 'Eco-Conscious',   d: 'Minimal waste & thoughtful crafting' },
                 { icon: '📦', t: 'Dreamy Packaging', d: 'Unboxing is part of the magic' },
               ].map(f => (
                 <div key={f.t} className="clay" style={{ padding: '14px 16px', borderRadius: 18 }}>
@@ -878,7 +888,7 @@ function Footer() {
               </div>
             </div>
             <p style={{ fontSize: 14, color: 'var(--taupe-lt)', maxWidth: 280, lineHeight: 1.7, margin: 0, fontFamily: 'var(--font-b)' }}>
-              Handmade crochet crafts & flower bouquets made with love.
+              Handmade Pipe Cleaner crafts & flower bouquets made with love.
               Every stitch tells a story. ♡
             </p>
           </div>
@@ -890,8 +900,8 @@ function Footer() {
             <div style={{ display: 'flex', gap: 12 }}>
               {[
                 { icon: '🛍️', label: 'Shopee',    href: 'https://id.shp.ee/uRr5bJn9' },
-                { icon: '📸', label: 'Instagram', href: 'https://instagram.com' },
-                { icon: '🎵', label: 'TikTok',    href: 'https://tiktok.com' },
+                { icon: '📸', label: 'Instagram', href: 'https://www.instagram.com/myammiycraft.id?igsh=dDhkMWx1M2U2OTU5' },
+                { icon: '🎵', label: 'TikTok',    href: 'https://www.tiktok.com/@myammiycraft?_r=1&_t=ZS-98SAaOHFHgD' },
               ].map(s => (
                 <a
                   key={s.label}
@@ -931,7 +941,7 @@ function Footer() {
             © 2026 handmade by myammiy · All rights reserved
           </p>
           <p style={{ fontSize: 13, color: 'var(--taupe-xlt)', fontFamily: 'var(--font-h)', fontStyle: 'italic', margin: 0 }}>
-            Made with love & way too much yarn 🧶✨
+            Made with love & way too much carfting ✨
           </p>
         </div>
       </div>
